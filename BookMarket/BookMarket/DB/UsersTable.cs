@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using SQLite;
-namespace BookMarket.DB
+using Xamarin.Essentials;
+namespace BookMarket.Tables
 {
-    class UsersDB
+    class UsersTable
     {
         [Unique,MaxLength(25),Column("Username")] public string Username { get; set; }
         [MaxLength(45),Column("Fullname")] public string Fullname { get; set; }
         [MaxLength(45), Column("Pass")] public string Pass{ get; set; }
         [Column("GenderID")] public int GenderId {  get; set; }
+
+        [Column("emails")] public string emails{ get; set; }
 
         //To show if its user or manger
         [DefaultValue(false),Column("UserType")] public bool UserType { get; set; }
