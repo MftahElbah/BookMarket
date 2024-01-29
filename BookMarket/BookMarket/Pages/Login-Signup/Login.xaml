@@ -6,7 +6,7 @@
         <StackLayout VerticalOptions="Center">
 
             <Frame
-                Padding="11"
+                Padding="10"
                 BackgroundColor="Transparent"
                 BorderColor="Blue"
                 
