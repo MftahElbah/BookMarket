@@ -14,7 +14,7 @@
                 >
                 
                 <Entry
-                    x:Name="usernameEntry"    
+                    x:Name="UsernameEntry"    
                     Placeholder="اسم المستخدم" 
                    
                     FlowDirection="RightToLeft"
@@ -41,7 +41,9 @@
                     />
 
             </FlexLayout>
-            <Label Text="" BackgroundColor="red" TextColor="white" x:Name="ErorrLbl" IsVisible="false"/>
+            <Grid>
+                <Label Text="" Padding="10" Margin="10,30,10,10"  HorizontalTextAlignment="Center" BackgroundColor="red" TextColor="white" x:Name="ErorrLbl" IsVisible="false" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -8,7 +8,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BookMarket.Tables;
 using System.IO;
-using BookMarket.Tables;
 
 namespace BookMarket.Pages.Login_Signup
 {
@@ -18,39 +17,52 @@ namespace BookMarket.Pages.Login_Signup
         public Login()
         {
             InitializeComponent();
+            
         }
 
         private void LoginClick(object sender, EventArgs e)
         {
-            var dbp = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDataBase.db");
-            var db = new SQLiteConnection(dbp);
-            var UsernameExist = db.Table<UsersTable>().Where(u => u.Username == usernameEntry.Text).FirstOrDefault();
-
-            if (UsernameExist != null)
+            var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UsersDB.db");
+            var db = new SQLiteConnection(dbPath);
+            db.CreateTable<UsersTable>();
+            
+            if(!string.IsNullOrEmpty(UsernameEntry.Text))
             {
-                if(UsernameExist.Active == true)
+            var user = db.Table<UsersTable>().FirstOrDefault(u => u.Username.Equals(UsernameEntry.Text));
+
+                if (user != null)
                 {
-                    if(UsernameExist.Pass == passwordEntry.Text)
+                    if(user.Active == true)
                     {
-                        App.Current.MainPage = new NavigationPage(new StorePage());
+                        if(user.Pass == passwordEntry.Text)
+                        {
+                            App.Current.MainPage = new NavigationPage(new StorePage());
+                        }
+                        else
+                        {
+                            ErorrLbl.Text = "هناك خطا في اسم المستخدم أو كلمة السر";
+                            ErorrLbl.IsVisible = true;
+                        }
                     }
                     else
                     {
-                        ErorrLbl.Text = "هناك خطا في اسم المستخدم أو كلمة السر";
+                        
+                        ErorrLbl.Text = "الحساب تم حذفه";
                         ErorrLbl.IsVisible = true;
+
                     }
                 }
                 else
                 {
-                    ErorrLbl.Text = "الحساب تم حذفه";
+                    ErorrLbl.Text = "هناك خطا في اسم المستخدم أو كلمة السر";
                     ErorrLbl.IsVisible = true;
+
                 }
             }
             else
             {
-                ErorrLbl.Text = "هناك خطا في اسم المستخدم أو كلمة السر";
+                ErorrLbl.Text = "يجب إدخال اسم المستخدم";
                 ErorrLbl.IsVisible = true;
-
             }
         }
 
