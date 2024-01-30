@@ -19,6 +19,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+               
+                <Label Text="تسجيل حساب جديد" FontSize="Title" TextColor="#02111b" Grid.Row="0" Grid.ColumnSpan="2"/>
                 
                 <Entry
                     x:Name="UsernameEntry"    
@@ -44,28 +46,32 @@
                     FlowDirection="RightToLeft"
                     />
 
-            </Grid>
-            
-            <FlexLayout>
-                
-            </FlexLayout>
-            <FlexLayout VerticalOptions="Center" HorizontalOptions="Center" Wrap="Wrap" HeightRequest="50">
+                <Label Text="هل لديك حساب بالفعل ؟ قم بالدخول" FontSize="Title" TextColor="#02111b" Grid.Row="3" Grid.Column="1" HorizontalOptions="End"/>
+
                 <Button 
                     CornerRadius="20"
                     Text="الغاء"
-                    Grid.Row="3"
                     Margin="20"
                     Clicked="CancelClicked"
+                    Grid.Row="4"
+                    Grid.Column="0"
                 />
-                <Button
+                <Button 
                     CornerRadius="20"
                     Text="التالي"
-                    Grid.Row="3"
                     Margin="20"
                     Clicked="NextClicked"
+                    Grid.Row="4"
+                    Grid.Column="0"
                 />
                 
-            </FlexLayout>
+
+                <Grid Grid.Row="5" Grid.ColumnSpan="2">
+                    <Label Text="" Padding="10" Margin="10,30,10,10"  HorizontalTextAlignment="Center" BackgroundColor="red" TextColor="white" x:Name="ErorrLbl" IsVisible="false" />
+                </Grid>
+                
+            </Grid>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
