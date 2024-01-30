@@ -46,7 +46,7 @@
                     FlowDirection="RightToLeft"
                     />
 
-                <Label Text="هل لديك حساب بالفعل ؟ قم بالدخول" FontSize="Title" TextColor="#02111b" Grid.Row="3" Grid.Column="1" HorizontalOptions="End"/>
+                <Label Text="هل لديك حساب بالفعل ؟ قم بالدخول" FontSize="Small" TextColor="#02111b" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="End" TextDecorations="Underline" />
 
                 <Button 
                     CornerRadius="20"
@@ -62,7 +62,7 @@
                     Margin="20"
                     Clicked="NextClicked"
                     Grid.Row="4"
-                    Grid.Column="0"
+                    Grid.Column="1"
                 />
                 
 

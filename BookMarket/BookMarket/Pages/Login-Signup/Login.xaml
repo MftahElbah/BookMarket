@@ -1,48 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BookMarket.Pages.Login_Signup.Login">
+             x:Class="BookMarket.Pages.Login_Signup.Login"
+             BackgroundColor="#ECEAEC">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center">
-
-            <Frame
-                Padding="10"
-                BackgroundColor="Transparent"
-                BorderColor="Blue"
-                
-                CornerRadius="30"
-                >
-                
-                    <Entry
-                        x:Name="UsernameEntry"    
-                        Placeholder="اسم المستخدم" 
-                   
-                        FlowDirection="RightToLeft"
-                    
-                    />
-            </Frame>
-            
-            <Entry FlowDirection="RightToLeft" x:Name="passwordEntry" Placeholder="كلمة المرور" IsPassword="True" Grid.Row="2" Margin="20" />
-            <FlexLayout VerticalOptions="Center" HorizontalOptions="Center" Wrap="Wrap" HeightRequest="50">
-            
-                <Button 
-                    CornerRadius="20"
-                    Text="تسجيل"
-                    Grid.Row="3"
-                    Margin="20"
-                    Clicked="SignupClick"
-                    />
-                <Button
-                    CornerRadius="20"
-                    Text="دخول"
-                    Grid.Row="3"
-                    Margin="20"
-                    Clicked="LoginClick"
-                    />
-
-            </FlexLayout>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent">
             <Grid>
-                <Label Text="" Padding="10" Margin="10,30,10,10"  HorizontalTextAlignment="Center" BackgroundColor="red" TextColor="white" x:Name="ErorrLbl" IsVisible="false" />
+
+                <Grid.RowDefinitions Height="*">
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+               
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                             
+                        
+                    <Entry
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"   
+                        x:Name="UsernameEntry"    
+                        Placeholder="اسم المستخدم"                   
+                        FlowDirection="RightToLeft"
+                        Margin="40,0" 
+                        />
+
+
+                    <Entry 
+                        FlowDirection="RightToLeft"
+                        x:Name="passwordEntry"
+                        Placeholder="كلمة المرور"
+                        IsPassword="True"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        Margin="40,0" 
+                     />
+                
+                        <Button 
+                        CornerRadius="20"
+                        Text="تسجيل"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Margin="20"
+                        HorizontalOptions="Center"
+                        Clicked="SignupClick"
+                        BackgroundColor="#ff9f1c"
+                        TextColor="#02111b"
+                        BorderColor="#02111b"
+                        BorderWidth="3"
+                        />
+                        <Button
+                        CornerRadius="20"
+                        Text="دخول"
+                        Grid.Row="3"
+                        Margin="20"
+                        Grid.Column="1"
+                        Clicked="LoginClick"
+                        HorizontalOptions="Center"
+                        BackgroundColor="#02111b"
+                        TextColor="#ff9f1c"
+                        BorderColor="#ff9f1c"
+                        BorderWidth="3"
+                        />
+
+                
+                    <Grid HorizontalOptions="Center" >
+                        <Label Text="" Padding="10" Margin="10,30,10,10"  HorizontalTextAlignment="Center" BackgroundColor="red" TextColor="white" x:Name="ErorrLbl" Opacity="0" />
+                    </Grid>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

@@ -41,28 +41,28 @@ namespace BookMarket.Pages.Login_Signup
                         else
                         {
                             ErorrLbl.Text = "هناك خطا في اسم المستخدم أو كلمة السر";
-                            ErorrLbl.IsVisible = true;
+                            ErorrLbl.Opacity = 100;
                         }
                     }
                     else
                     {
                         
                         ErorrLbl.Text = "الحساب تم حذفه";
-                        ErorrLbl.IsVisible = true;
+                        ErorrLbl.Opacity = 100;
 
                     }
                 }
                 else
                 {
                     ErorrLbl.Text = "هناك خطا في اسم المستخدم أو كلمة السر";
-                    ErorrLbl.IsVisible = true;
+                    ErorrLbl.Opacity = 100;
 
                 }
             }
             else
             {
                 ErorrLbl.Text = "يجب إدخال اسم المستخدم";
-                ErorrLbl.IsVisible = true;
+                ErorrLbl.Opacity= 100;
             }
         }
 
