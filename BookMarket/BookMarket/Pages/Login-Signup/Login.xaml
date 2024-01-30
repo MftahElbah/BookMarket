@@ -13,13 +13,13 @@
                 CornerRadius="30"
                 >
                 
-                <Entry
-                    x:Name="UsernameEntry"    
-                    Placeholder="اسم المستخدم" 
+                    <Entry
+                        x:Name="UsernameEntry"    
+                        Placeholder="اسم المستخدم" 
                    
-                    FlowDirection="RightToLeft"
+                        FlowDirection="RightToLeft"
                     
-                       />
+                    />
             </Frame>
             
             <Entry FlowDirection="RightToLeft" x:Name="passwordEntry" Placeholder="كلمة المرور" IsPassword="True" Grid.Row="2" Margin="20" />

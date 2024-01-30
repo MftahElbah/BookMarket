@@ -17,7 +17,12 @@ namespace BookMarket.Pages.Login_Signup
 			InitializeComponent ();
 		}
 
-		private void CancelBtn (object sender, EventArgs e)
+        private void NextClicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new NavigationPage(new StorePage());
+        }
+
+        private void CancelClicked(object sender, EventArgs e)
 		{
 			App.Current.MainPage= new NavigationPage (new Login());
 		}
