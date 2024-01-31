@@ -28,7 +28,7 @@ namespace BookMarket.Pages.Login_Signup
             
             if(!string.IsNullOrEmpty(UsernameEntry.Text))
             {
-            var user = db.Table<UsersTable>().FirstOrDefault(u => u.Username.Equals(UsernameEntry.Text));
+            var user = db.Table<UsersTable>().FirstOrDefault(u => u.UserName.Equals(UsernameEntry.Text));
 
                 if (user != null)
                 {
@@ -64,6 +64,7 @@ namespace BookMarket.Pages.Login_Signup
                 ErorrLbl.Text = "يجب إدخال اسم المستخدم";
                 ErorrLbl.Opacity= 100;
             }
+            
         }
 
         private void SignupClick(object sender, EventArgs e) {

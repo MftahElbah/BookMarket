@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookMarket.Pages.Login_Signup.SignupPage3"
+             BackgroundColor="#ECEAEC">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" >
+
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Grid.RowDefinitions Height="*">
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Entry 
+                    Grid.ColumnSpan="2"
+                    Grid.Row="0"
+                    FlowDirection="RightToLeft"
+                    Placeholder="كم عمرك ؟"
+                    x:Name="AgeEntry"
+                    Keyboard="Numeric"
+                    />
+
+                <Grid Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <RadioButton
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        FlowDirection="RightToLeft"
+                        HorizontalOptions="End"
+                        x:Name="MaleRad"
+                        
+                        
+                    />
+                    <Label
+                        Text="ذكر"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        VerticalOptions="Center"
+                        HorizontalOptions="EndAndExpand"
+                        />
+                    <RadioButton
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FlowDirection="RightToLeft"
+                        HorizontalOptions="End"
+                        x:Name="FeMaleRad"
+                        
+                    />
+                    <Label
+                        Text="انثى"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        VerticalOptions="Center"
+                        
+                        />
+                    
+                </Grid>
+
+                <Picker
+                    Grid.ColumnSpan="2"
+                    Grid.Row="2"
+                    Title="أختر سؤال الأمان"
+                    Margin="0,10"
+                    SelectedIndexChanged="QuesPickChange"
+                    x:Name="QuesPicker"
+                    >
+                    <Picker.Items>
+                        <x:String>أول حيوان اليف امتلكته</x:String>
+                        <x:String>أول مدرسة درست فيها</x:String>
+                        <x:String>أسم أول سيارة امتلكته</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Entry 
+                    Placeholder="الأجابة"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    FlowDirection="RightToLeft"
+                    x:Name="AsrEntry"
+                    />
+
+
+
+                <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                    <CheckBox
+                    HorizontalOptions="EndAndExpand"
+                    x:Name="TAcept"
+                    IsChecked="False"
+                    Color="#02111b"
+                    
+                    />
+                <Label 
+                    Text="هل توافق على الشروط ؟"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Margin="0,0,30,0"
+                    
+                    />
+                    </Grid>
+
+
+
+
+                <Button 
+            CornerRadius="20"
+            Text="الغاء"
+            Margin="20"
+            BackgroundColor="#02111b"
+            TextColor="#ff9f1c"
+            BorderColor="#ff9f1c"
+            BorderWidth="3"
+            Grid.Row="5"
+            Grid.Column="0"
+                    Clicked="CancelCLicked"
+        />
+                <Button 
+            CornerRadius="20"
+            Text="تسجيل"
+            Margin="20"
+            Grid.Row="5"
+            Grid.Column="1"
+            BackgroundColor="#ff9f1c"
+            TextColor="#02111b"
+            BorderColor="#02111b"
+            BorderWidth="3"        
+            Clicked="RegCLicked"
+        />
+
+
+                <Grid Grid.Row="6" Grid.ColumnSpan="2">
+                    <Label Text="" Padding="10" Margin="10,30,10,10"  HorizontalTextAlignment="Center" BackgroundColor="red" TextColor="white" x:Name="ErorrLbl" Opacity="0" />
+                </Grid>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

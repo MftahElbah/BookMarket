@@ -10,7 +10,7 @@ namespace BookMarket
         {
             InitializeComponent();
 
-            MainPage = new Pages.Login_Signup.Login();
+            MainPage = new Pages.Login_Signup.SignupPage3();
         }
 
         protected override void OnStart()

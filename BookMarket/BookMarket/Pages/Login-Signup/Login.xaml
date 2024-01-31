@@ -29,6 +29,7 @@
                         Placeholder="اسم المستخدم"                   
                         FlowDirection="RightToLeft"
                         Margin="40,0" 
+                        ClearButtonVisibility="WhileEditing"
                         />
 
 
@@ -37,6 +38,7 @@
                         x:Name="passwordEntry"
                         Placeholder="كلمة المرور"
                         IsPassword="True"
+                        ClearButtonVisibility="WhileEditing"
                         Grid.Row="2"
                         Grid.ColumnSpan="2"
                         Margin="40,0" 

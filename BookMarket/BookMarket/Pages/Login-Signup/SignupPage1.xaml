@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BookMarket.Pages.Login_Signup.SignupPage1">
+             x:Class="BookMarket.Pages.Login_Signup.SignupPage1"
+             BackgroundColor="#ECEAEC">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
 
@@ -28,6 +29,8 @@
                     Grid.ColumnSpan="2"
                     Grid.Row="1"
                     FlowDirection="RightToLeft"
+                    Keyboard="Text"
+                    MaxLength="10"
                  />
                 
                 <Entry
@@ -36,6 +39,10 @@
                     Grid.Column="1"
                     Grid.Row="2"
                     FlowDirection="RightToLeft"
+                    Keyboard="Text"
+                    ClearButtonVisibility="WhileEditing"
+                    TextChanged="FNChange"
+                    MaxLength="10"
                     />
 
                 <Entry
@@ -44,6 +51,8 @@
                     Grid.Column="0"
                     Grid.Row="2"
                     FlowDirection="RightToLeft"
+                    TextChanged="LNChange"
+                    MaxLength="10"
                     />
 
                 <Label Text="هل لديك حساب بالفعل ؟ قم بالدخول" FontSize="Small" TextColor="#02111b" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="End" TextDecorations="Underline" />
@@ -67,7 +76,7 @@
                 
 
                 <Grid Grid.Row="5" Grid.ColumnSpan="2">
-                    <Label Text="" Padding="10" Margin="10,30,10,10"  HorizontalTextAlignment="Center" BackgroundColor="red" TextColor="white" x:Name="ErorrLbl" IsVisible="false" />
+                    <Label Text="" Padding="10" Margin="10,30,10,10"  HorizontalTextAlignment="Center" BackgroundColor="red" TextColor="white" x:Name="ErorrLbl" Opacity="0" />
                 </Grid>
                 
             </Grid>
