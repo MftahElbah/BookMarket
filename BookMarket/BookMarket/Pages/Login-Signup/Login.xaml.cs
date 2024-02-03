@@ -17,52 +17,87 @@ namespace BookMarket.Pages.Login_Signup
         public Login()
         {
             InitializeComponent();
-            
+            NavigationPage.SetHasNavigationBar(this, false);
+
+
         }
 
         private void LoginClick(object sender, EventArgs e)
         {
+
             var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UsersDB.db");
             var db = new SQLiteConnection(dbPath);
-            db.CreateTable<UsersTable>();
+
             
             if(!string.IsNullOrEmpty(UsernameEntry.Text))
             {
             var user = db.Table<UsersTable>().FirstOrDefault(u => u.UserName.Equals(UsernameEntry.Text));
-
-                if (user != null)
+                if (!string.IsNullOrEmpty(passwordEntry.Text))
                 {
-                    if(user.Active == true)
+
+                    if (user != null)
                     {
-                        if(user.Pass == passwordEntry.Text)
+                        if(user.Active)
                         {
-                            App.Current.MainPage = new NavigationPage(new StorePage());
+                            if(user.Pass == passwordEntry.Text)
+                            {
+                                if (user.secQues)
+                                {
+                                    App.Current.Properties["LoginUsername"] = UsernameEntry.Text;
+                                    App.Current.MainPage = new NavigationPage(new SecurityQuesPage());
+                                }
+                                else
+                                {
+
+                                    if (!user.UserType)
+                                    {
+                                    App.Current.MainPage = new NavigationPage(new StorePage());
+                                    }
+                                    else
+                                    {
+                                        App.Current.MainPage = new NavigationPage(new ChoosignPage());
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Errlbl.Text = "Username or Password incorrect";
+                                ErrFrm.Opacity = 100;
+                                UsernameEntry.BorderColor = Color.Red;
+                                passwordEntry.BorderColor = Color.Red;
+                            }
                         }
                         else
                         {
-                            ErorrLbl.Text = "هناك خطا في اسم المستخدم أو كلمة السر";
-                            ErorrLbl.Opacity = 100;
+
+                            Errlbl.Text = "This account has been deleted";
+                            ErrFrm.Opacity = 100;
+
                         }
                     }
                     else
                     {
-                        
-                        ErorrLbl.Text = "الحساب تم حذفه";
-                        ErorrLbl.Opacity = 100;
+                        Errlbl.Text = "Username or Password incorrect";
+                        ErrFrm.Opacity = 100;
+                        UsernameEntry.BorderColor = Color.Red;
+                        passwordEntry.BorderColor = Color.Red;
 
                     }
                 }
                 else
                 {
-                    ErorrLbl.Text = "هناك خطا في اسم المستخدم أو كلمة السر";
-                    ErorrLbl.Opacity = 100;
-
+                Errlbl.Text = "Password must be filled in";
+                ErrFrm.Opacity= 100;
+                    
+                    passwordEntry.BorderColor = Color.Red;
                 }
             }
             else
             {
-                ErorrLbl.Text = "يجب إدخال اسم المستخدم";
-                ErorrLbl.Opacity= 100;
+                Errlbl.Text = "Username must be filled in";
+                ErrFrm.Opacity= 100;
+                UsernameEntry.BorderColor = Color.Red;
+                
             }
             
         }

@@ -12,10 +12,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\fonts\LibreBaskerville-Bold.ttf" />
+    <None Remove="Resources\fonts\LibreBaskerville-Italic.ttf" />
+    <None Remove="Resources\fonts\LibreBaskerville-Regular.ttf" />
+    <None Remove="Resources\svg\arrow-right-solid.svg" />
+    <None Remove="Resources\svg\key-solid.svg" />
+    <None Remove="Resources\svg\right-to-bracket-solid.svg" />
+    <None Remove="Resources\svg\user-plus-solid.svg" />
+    <None Remove="Resources\svg\user-solid.svg" />
+    <None Remove="Resources\svg\xmark-solid.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\fonts\LibreBaskerville-Bold.ttf" />
+    <EmbeddedResource Include="Resources\fonts\LibreBaskerville-Italic.ttf" />
+    <EmbeddedResource Include="Resources\fonts\LibreBaskerville-Regular.ttf" />
+    <EmbeddedResource Include="Resources\svg\arrow-right-solid.svg" />
+    <EmbeddedResource Include="Resources\svg\key-solid.svg" />
+    <EmbeddedResource Include="Resources\svg\right-to-bracket-solid.svg" />
+    <EmbeddedResource Include="Resources\svg\user-plus-solid.svg" />
+    <EmbeddedResource Include="Resources\svg\user-solid.svg" />
+    <EmbeddedResource Include="Resources\svg\xmark-solid.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
-    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="24.2.3" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
+    <PackageReference Include="Xamarin.Forms.CustomControls" Version="0.1.30" />
+    <PackageReference Include="Xamarin.Forms.Svg" Version="1.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +51,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Pages\AdminPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ChoosingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\Login-Signup\Login.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -35,6 +67,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Login-Signup\SignupPage3.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\SecurityQuesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\StorePage.xaml">

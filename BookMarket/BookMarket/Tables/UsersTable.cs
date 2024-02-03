@@ -26,6 +26,9 @@ namespace BookMarket.Tables
         public int QuesID {  get; set; }
         public string QuesAns { get; set; }
 
+        //if the account activete the security question
+        public bool secQues {  get; set; }
+
         //if this account deleted or not
         
         public bool Active { get; set; }

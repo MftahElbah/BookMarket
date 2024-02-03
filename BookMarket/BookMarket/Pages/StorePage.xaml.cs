@@ -14,7 +14,8 @@ namespace BookMarket.Pages
 	{
 		public StorePage ()
 		{
-			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
+            InitializeComponent ();
 		}
 	}
 }

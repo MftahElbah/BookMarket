@@ -15,7 +15,8 @@ namespace BookMarket.Pages.Login_Signup
 		public SignupPage2 ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 
 		private void NextClicked(object sender, EventArgs e)
 		{

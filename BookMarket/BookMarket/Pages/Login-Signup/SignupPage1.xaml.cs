@@ -17,7 +17,8 @@ namespace BookMarket.Pages.Login_Signup
 		public SignupPage1 ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 
         private bool IsAllLetters(string text) 
         {
@@ -62,7 +63,6 @@ namespace BookMarket.Pages.Login_Signup
 
             var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UsersDB.db");
             var db = new SQLiteConnection(dbPath);
-            db.CreateTable<UsersTable>();
 
             if (!string.IsNullOrEmpty(UsernameEntry.Text) && !string.IsNullOrEmpty(Firstname.Text) && !string.IsNullOrEmpty(Lastname.Text))
 			{
@@ -76,15 +76,19 @@ namespace BookMarket.Pages.Login_Signup
 				}
 				else
 				{
-                    ErorrLbl.Text = "هذا المستخدم موجود بالفعل";
-                    ErorrLbl.Opacity = 1.0;
+                    Errlbl.Text = "This username already exists";
+                    ErrFrm.Opacity = 1;
+                    UsernameEntry.BorderColor = Color.Red;
                 }
 			}
 			else
 			{
-				ErorrLbl.Text = "يجب ملئ جميع الحقول";
-				ErorrLbl.Opacity = 1.0;
-			}
+				Errlbl.Text = "All fields must be filled out";
+                ErrFrm.Opacity = 1;
+                UsernameEntry.BorderColor = Color.Red;
+                Firstname.BorderColor = Color.Red;
+                Lastname.BorderColor = Color.Red;
+            }
             
         }
 

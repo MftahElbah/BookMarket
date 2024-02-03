@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookMarket.Pages.SecurityQuesPage"
+              BackgroundColor="#ECEAEC"
+              xmlns:controls="clr-namespace:BookMarket.Controls;assembly=BookMarket"
+              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+              xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="" HorizontalOptions="Center" x:Name="quesLbl" FontFamily="LBR"/>
+
+            <controls:StandardEntry 
+                Placeholder="  Answer"
+                x:Name="answerEntry"
+                FontFamily="LBR"
+                controls:CornerRadius="20"
+                controls:BorderThickness="4"
+                controls:BorderColor="#02111b"
+                TextColor="#02111b"
+                WidthRequest="200"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                TextChanged="answerEntryChange"
+                />
+
+            <buttons:SfButton
+                Text="Continue"
+                FontFamily="LBR"
+                Clicked="AnswerClicked"
+                buttons:IsCheckable="False"
+                CornerRadius="20"
+                Padding="10"
+                BorderWidth="3"
+                BackgroundColor="#ff9f1c"
+                TextColor="#02111b"
+                BorderColor="#02111b"
+                x:Name="ansbtn"
+                >
+                
+            </buttons:SfButton>
+
+            <Frame BackgroundColor="Red" Opacity="0" Margin="50,0" CornerRadius="20" Padding="0,10" x:Name="ErrFrm">
+                <Label Text="" HorizontalTextAlignment="Center" TextColor="white"  x:Name="Errlbl" FontFamily="LBI"/>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

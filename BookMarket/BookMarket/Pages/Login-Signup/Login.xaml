@@ -2,80 +2,114 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BookMarket.Pages.Login_Signup.Login"
-             BackgroundColor="#ECEAEC">
+             BackgroundColor="#ECEAEC"
+             
+             xmlns:controls="clr-namespace:BookMarket.Controls;assembly=BookMarket"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
+             
+             >
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent">
-            <Grid>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" Spacing="10">
 
-                <Grid.RowDefinitions Height="*">
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-               
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+            
+            
+            <FlexLayout Wrap="Wrap" JustifyContent="Center">
 
-                             
-                        
-                    <Entry
-                        Grid.Row="1"
-                        Grid.ColumnSpan="2"   
-                        x:Name="UsernameEntry"    
-                        Placeholder="اسم المستخدم"                   
-                        FlowDirection="RightToLeft"
-                        Margin="40,0" 
-                        ClearButtonVisibility="WhileEditing"
+                <Image>
+                    <Image.Source>
+                        <svg:SvgImageSource Source="user-solid.svg" Color="#02111b" Height="30" Width="27" x:Name="usernameIcon"/>
+                    </Image.Source>
+                </Image>
+
+                <controls:StandardEntry
+                    controls:CornerRadius="20"
+                    controls:BorderThickness="4"
+                    controls:BorderColor="#02111b"
+                    TextColor="#02111b"
+                    Placeholder="  Username"
+                    ClearButtonVisibility="WhileEditing"
+                    x:Name="UsernameEntry"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    Margin="10,0,-10,0"
+                    FontFamily="LBR"
+                    
                         />
-
-
-                    <Entry 
-                        FlowDirection="RightToLeft"
-                        x:Name="passwordEntry"
-                        Placeholder="كلمة المرور"
-                        IsPassword="True"
-                        ClearButtonVisibility="WhileEditing"
-                        Grid.Row="2"
-                        Grid.ColumnSpan="2"
-                        Margin="40,0" 
-                     />
                 
-                        <Button 
+            </FlexLayout>
+
+            <FlexLayout Wrap="Wrap" JustifyContent="Center" >
+                <Image >
+                    <Image.Source>
+                        <svg:SvgImageSource Source="key-solid.svg" Color="#02111b" Height="30" Width="30" x:Name="passwordIcon"/>
+                    </Image.Source>
+                </Image>
+                <controls:StandardEntry
+                        controls:CornerRadius="20"
+                        controls:BorderThickness="4"
+                        controls:BorderColor="#02111b"
+                        TextColor="#02111b"
+                        Placeholder="  Password"
+                        ClearButtonVisibility="WhileEditing"
+                        x:Name="passwordEntry"
+                        WidthRequest="200"
+                        HeightRequest="50"
+                        Margin="10,0,-10,0"
+                    FontFamily="LBR"
+                        />
+            </FlexLayout>
+
+
+            <FlexLayout Wrap="Wrap" JustifyContent="SpaceEvenly" AlignItems="Center">
+
+                <buttons:SfButton
                         CornerRadius="20"
-                        Text="تسجيل"
+                        Text="Signup"
                         Grid.Row="3"
                         Grid.Column="0"
-                        Margin="20"
+                        buttons:ShowIcon="True"
                         HorizontalOptions="Center"
                         Clicked="SignupClick"
                         BackgroundColor="#ff9f1c"
                         TextColor="#02111b"
                         BorderColor="#02111b"
                         BorderWidth="3"
-                        />
-                        <Button
+                    Padding="10"
+                    FontFamily="LBR"
+                    >
+                    <buttons:SfButton.ImageSource>
+                        <svg:SvgImageSource Source="user-plus-solid.svg" Color="#02111b" Height="18" Width="21"/>
+                    </buttons:SfButton.ImageSource>
+                </buttons:SfButton>
+                    
+                <buttons:SfButton
                         CornerRadius="20"
-                        Text="دخول"
-                        Grid.Row="3"
-                        Margin="20"
-                        Grid.Column="1"
-                        Clicked="LoginClick"
+                        Text="Login"
                         HorizontalOptions="Center"
+                        Clicked="LoginClick"
                         BackgroundColor="#02111b"
                         TextColor="#ff9f1c"
                         BorderColor="#ff9f1c"
                         BorderWidth="3"
-                        />
-
+                        buttons:ShowIcon="True"
+                    Padding="10"
+                    FontFamily="LBR"
+                    >
+                    <buttons:SfButton.ImageSource>
+                        <svg:SvgImageSource Source="right-to-bracket-solid.svg" Color="#ff9f1c" Height="18" Width="18"/>
+                    </buttons:SfButton.ImageSource>
+                </buttons:SfButton>
                 
-                    <Grid HorizontalOptions="Center" >
-                        <Label Text="" Padding="10" Margin="10,30,10,10"  HorizontalTextAlignment="Center" BackgroundColor="red" TextColor="white" x:Name="ErorrLbl" Opacity="0" />
-                    </Grid>
-            </Grid>
+            </FlexLayout>
+            
+
+
+            <Frame BackgroundColor="Red" Opacity="0" Margin="50,0" CornerRadius="20" Padding="0,10" x:Name="ErrFrm">
+                <Label Text="" HorizontalTextAlignment="Center" TextColor="white"  x:Name="Errlbl" FontFamily="LBI"/>
+            </Frame>
+                    
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

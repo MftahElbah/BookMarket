@@ -2,18 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BookMarket.Pages.Login_Signup.SignupPage1"
-             BackgroundColor="#ECEAEC">
+             BackgroundColor="#ECEAEC"
+             
+             xmlns:controls="clr-namespace:BookMarket.Controls;assembly=BookMarket"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
+             >
+    
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
 
-            <Grid>
+            <Grid Margin="20,0,20,0" HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="10">
 
-                <Grid.RowDefinitions Height="*">
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="45"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -21,64 +26,100 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                
-                <Label Text="تسجيل حساب جديد" FontSize="Title" TextColor="#02111b" Grid.Row="0" Grid.ColumnSpan="2"/>
+                <Label Text="Create New Account" FontSize="Title" FontFamily="LBB" TextColor="#02111b" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
                 
-                <Entry
-                    x:Name="UsernameEntry"    
-                    Placeholder="اسم المستخدم" 
+                <controls:StandardEntry
+                    controls:CornerRadius="20"
+                    controls:BorderThickness="4"
+                    controls:BorderColor="#02111b"
+                    TextColor="#02111b"
+                    Placeholder="  Username"
+                    x:Name="UsernameEntry"
                     Grid.ColumnSpan="2"
                     Grid.Row="1"
-                    FlowDirection="RightToLeft"
                     Keyboard="Text"
                     MaxLength="10"
-                 />
-                
-                <Entry
+                    FontFamily="LBR"
+                    />
+                <controls:StandardEntry
+                    controls:CornerRadius="20"
+                    controls:BorderThickness="4"
+                    controls:BorderColor="#02111b"
+                    TextColor="#02111b"
+                    Placeholder="  First name"
                     x:Name="Firstname"
-                    Placeholder="اسم الأول"
-                    Grid.Column="1"
+                    Grid.Column="0"
                     Grid.Row="2"
-                    FlowDirection="RightToLeft"
                     Keyboard="Text"
-                    ClearButtonVisibility="WhileEditing"
+                    MaxLength="10"
                     TextChanged="FNChange"
-                    MaxLength="10"
+                    FontFamily="LBR"
+                    
                     />
-
-                <Entry
+                <controls:StandardEntry
+                    controls:CornerRadius="20"
+                    controls:BorderThickness="4"
+                    controls:BorderColor="#02111b"
+                    TextColor="#02111b"
+                    Placeholder="  Last name"
                     x:Name="Lastname"
-                    Placeholder="اسم الأخير"
-                    Grid.Column="0"
+                    Grid.Column="1"
                     Grid.Row="2"
-                    FlowDirection="RightToLeft"
-                    TextChanged="LNChange"
+                    Keyboard="Text"
                     MaxLength="10"
+                    TextChanged="LNChange"
+                    FontFamily="LBR"
                     />
 
-                <Label Text="هل لديك حساب بالفعل ؟ قم بالدخول" FontSize="Small" TextColor="#02111b" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="End" TextDecorations="Underline" />
+                <FlexLayout Grid.ColumnSpan="2" Grid.Row="3" JustifyContent="SpaceEvenly">
+                    
 
-                <Button 
+                <buttons:SfButton
                     CornerRadius="20"
-                    Text="الغاء"
-                    Margin="20"
+                    Text="Cancel"
+                    HorizontalOptions="Center"
                     Clicked="CancelClicked"
-                    Grid.Row="4"
-                    Grid.Column="0"
-                />
-                <Button 
+                    BackgroundColor="#02111b"
+                    TextColor="#ff9f1c"
+                    BorderColor="#ff9f1c"
+                    BorderWidth="3"
+                    buttons:ShowIcon="True"
+                    Padding="10,0"
+                    FontFamily="LBR"
+                    >
+                    <buttons:SfButton.ImageSource>
+                        <svg:SvgImageSource Source="xmark-solid.svg" Color="#ff9f1c" Height="20" Width="20"/>
+                    </buttons:SfButton.ImageSource>
+                </buttons:SfButton>
+                    
+                <buttons:SfButton
                     CornerRadius="20"
-                    Text="التالي"
-                    Margin="20"
+                    Text="Next"
+                    buttons:ShowIcon="True"
+                    HorizontalOptions="Center"
                     Clicked="NextClicked"
-                    Grid.Row="4"
-                    Grid.Column="1"
-                />
-                
+                    BackgroundColor="#ff9f1c"
+                    TextColor="#02111b"
+                    BorderColor="#02111b"
+                    BorderWidth="3"
+                    Padding="10,0"
+                    FontFamily="LBR"
+                    >
+                        <buttons:SfButton.ImageSource>
+                        <svg:SvgImageSource Source="arrow-right-solid.svg" Color="#02111b" Height="18" Width="21"/>
+                        </buttons:SfButton.ImageSource>
+                    </buttons:SfButton>
+                </FlexLayout>
 
-                <Grid Grid.Row="5" Grid.ColumnSpan="2">
-                    <Label Text="" Padding="10" Margin="10,30,10,10"  HorizontalTextAlignment="Center" BackgroundColor="red" TextColor="white" x:Name="ErorrLbl" Opacity="0" />
-                </Grid>
-                
+
+
+
+
+
+                <Frame Grid.ColumnSpan="2" Grid.Row="4" BackgroundColor="Red" Opacity="0" Margin="50,0" CornerRadius="20" Padding="0,10" x:Name="ErrFrm">
+                    <Label Text="" HorizontalTextAlignment="Center" TextColor="white"  x:Name="Errlbl" FontFamily="LBI"/>
+                </Frame>
+
             </Grid>
             
         </StackLayout>
