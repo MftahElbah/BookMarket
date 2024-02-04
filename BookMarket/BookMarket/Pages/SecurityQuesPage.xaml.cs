@@ -55,14 +55,9 @@ namespace BookMarket.Pages
             var user = db.Table<UsersTable>().FirstOrDefault(u => u.UserName.Equals(un));
 
             if (user.QuesAns == answerEntry.Text ) {
-				if (user.UserType)
-				{
-                    App.Current.MainPage = new NavigationPage(new ChoosignPage());
-                }
-				else
-				{
+
                     App.Current.MainPage = new NavigationPage(new StorePage());
-                }
+               
 			}
 			else
 			{

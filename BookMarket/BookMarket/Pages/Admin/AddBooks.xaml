@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookMarket.Pages.Admin.AddBooks"
+             BackgroundColor="#ECEAEC"
+             xmlns:controls="clr-namespace:BookMarket.Controls;assembly=BookMarket"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
+             >
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <controls:StandardEntry
+                Placeholder="  Enter the book name"
+                x:Name="BookNameEntry"
+                WidthRequest="300"
+                HeightRequest="50"
+                FontFamily="LBR"
+                controls:CornerRadius="20"
+                controls:BorderThickness="4"
+                controls:BorderColor="#02111b"
+                />
+            <controls:StandardEntry
+                Placeholder="  Enter the Author name"
+                x:Name="AuthNameEntry"
+                WidthRequest="300"
+                HeightRequest="50"
+                FontFamily="LBR"
+                controls:CornerRadius="20"
+                controls:BorderThickness="4"
+                controls:BorderColor="#02111b"
+                />
+            <controls:StandardEntry
+                Placeholder="  Enter the Price"
+                x:Name="PriceEntry"
+                WidthRequest="200"
+                HeightRequest="50"
+                FontFamily="LBR"
+                controls:CornerRadius="20"
+                controls:BorderThickness="4"
+                controls:BorderColor="#02111b"
+                />
+            <FlexLayout Wrap="Wrap" JustifyContent="SpaceEvenly" AlignItems="Center">
+
+                <Image x:Name="bookPictureImage" HeightRequest="150" WidthRequest="100" BackgroundColor="Gray"/>
+
+                <buttons:SfButton
+                    HeightRequest="50"
+                    Text="Select an Image"
+                    buttons:BackgroundColor="Gray"
+                    buttons:CornerRadius="20"
+                    buttons:ShowIcon="True"
+                    TextColor="#ECEAEC"
+                    FontFamily="LBR"
+                    Padding="10"
+                    Clicked="UploadClicked"
+                    >
+                    <buttons:SfButton.ImageSource>
+                        <svg:SvgImageSource Source="uploadsolid.svg" Color="#ECEAEC" Height="18" Width="18"/>
+                    </buttons:SfButton.ImageSource>
+
+
+                </buttons:SfButton>
+                
+            </FlexLayout>
+
+                
+            <buttons:SfButton
+                CornerRadius="20"
+                Text="Add Book"
+                buttons:ShowIcon="True"
+                HorizontalOptions="Center"
+                Clicked="AddBookClicked"
+                
+                BackgroundColor="#ff9f1c"
+                TextColor="#02111b"
+                BorderColor="#02111b"
+                BorderWidth="3"
+                Padding="10"
+                FontFamily="LBR"
+    >
+                <buttons:SfButton.ImageSource>
+                    <svg:SvgImageSource Source="plus-solid.svg" Color="#02111b" Height="18" Width="21"/>
+                </buttons:SfButton.ImageSource>
+                
+            </buttons:SfButton>
+
+            <Frame Grid.ColumnSpan="2" Grid.Row="4" BackgroundColor="Red" Opacity="0" Margin="50,0" CornerRadius="20" Padding="0,10" x:Name="ErrFrm">
+                <Label Text="" HorizontalTextAlignment="Center" TextColor="white"  x:Name="Errlbl" FontFamily="LBI"/>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

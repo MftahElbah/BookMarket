@@ -17,10 +17,16 @@
     <None Remove="Resources\fonts\LibreBaskerville-Regular.ttf" />
     <None Remove="Resources\svg\arrow-right-solid.svg" />
     <None Remove="Resources\svg\key-solid.svg" />
+    <None Remove="Resources\svg\plus-solid.svg" />
     <None Remove="Resources\svg\right-to-bracket-solid.svg" />
+    <None Remove="Resources\svg\uploadsolid.svg" />
     <None Remove="Resources\svg\user-plus-solid.svg" />
     <None Remove="Resources\svg\user-solid.svg" />
     <None Remove="Resources\svg\xmark-solid.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\svg\plus-solid.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +36,7 @@
     <EmbeddedResource Include="Resources\svg\arrow-right-solid.svg" />
     <EmbeddedResource Include="Resources\svg\key-solid.svg" />
     <EmbeddedResource Include="Resources\svg\right-to-bracket-solid.svg" />
+    <EmbeddedResource Include="Resources\svg\uploadsolid.svg" />
     <EmbeddedResource Include="Resources\svg\user-plus-solid.svg" />
     <EmbeddedResource Include="Resources\svg\user-solid.svg" />
     <EmbeddedResource Include="Resources\svg\xmark-solid.svg" />
@@ -54,7 +61,7 @@
     <EmbeddedResource Update="Pages\AdminPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\ChoosingPage.xaml">
+    <EmbeddedResource Update="Pages\Admin\AddBooks.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Login-Signup\Login.xaml">
@@ -67,6 +74,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Login-Signup\SignupPage3.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Main\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\SecurityQuesPage.xaml">

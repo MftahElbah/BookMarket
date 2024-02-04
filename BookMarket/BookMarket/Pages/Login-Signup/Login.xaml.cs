@@ -48,15 +48,7 @@ namespace BookMarket.Pages.Login_Signup
                                 }
                                 else
                                 {
-
-                                    if (!user.UserType)
-                                    {
                                     App.Current.MainPage = new NavigationPage(new StorePage());
-                                    }
-                                    else
-                                    {
-                                        App.Current.MainPage = new NavigationPage(new ChoosignPage());
-                                    }
                                 }
                             }
                             else
