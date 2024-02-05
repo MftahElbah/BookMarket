@@ -84,6 +84,10 @@ namespace BookMarket.Pages.Admin
             }
         }
 
+        public void ctlClicked (object sender, EventArgs e)
+        {
+            App.Current.MainPage = new NavigationPage(new EditBooks());
+        }
 
     }
 }

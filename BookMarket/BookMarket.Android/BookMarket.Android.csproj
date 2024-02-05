@@ -115,6 +115,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\drawable\plus-solid.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\drawable\edit.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\drawable\delete.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

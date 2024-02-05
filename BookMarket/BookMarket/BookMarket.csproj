@@ -16,6 +16,8 @@
     <None Remove="Resources\fonts\LibreBaskerville-Italic.ttf" />
     <None Remove="Resources\fonts\LibreBaskerville-Regular.ttf" />
     <None Remove="Resources\svg\arrow-right-solid.svg" />
+    <None Remove="Resources\svg\delete.svg" />
+    <None Remove="Resources\svg\edit.svg" />
     <None Remove="Resources\svg\key-solid.svg" />
     <None Remove="Resources\svg\plus-solid.svg" />
     <None Remove="Resources\svg\right-to-bracket-solid.svg" />
@@ -26,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\svg\delete.svg" />
     <EmbeddedResource Include="Resources\svg\plus-solid.svg" />
   </ItemGroup>
 
@@ -52,16 +55,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\svg\edit.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Pages\Login-Signup\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\AdminPage.xaml">
+    <EmbeddedResource Update="Pages\Admin\AdminFlayout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Admin\AddBooks.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Admin\EditBooks.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Login-Signup\Login.xaml">
@@ -79,7 +89,7 @@
     <EmbeddedResource Update="Pages\Main\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\SecurityQuesPage.xaml">
+    <EmbeddedResource Update="Pages\Login-Signup\SecurityQuesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\StorePage.xaml">

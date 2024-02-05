@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BookMarket.Pages
+namespace BookMarket.Pages.Admin
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AdminPage : ContentPage
+	public partial class AdminFlayout : FlyoutPage
 	{
-		public AdminPage ()
+		public AdminFlayout ()
 		{
 			InitializeComponent ();
 		}
