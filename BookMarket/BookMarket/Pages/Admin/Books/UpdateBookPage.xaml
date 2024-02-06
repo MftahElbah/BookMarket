@@ -10,7 +10,7 @@
              >
 
     <ContentPage.Resources>
-        <lol:ByteToImageSourceConverter x:Key="ByteToImageConverter" />
+        <controls:ByteToImageSourceConverter x:Key="ByteToImage"/>
     </ContentPage.Resources>
     <ContentPage.Content>
         
@@ -24,6 +24,8 @@
                Margin="20"
                />
 
+                <Image x:Name="bookPictureImage" HeightRequest="300" BackgroundColor="Transparent" Source="{Binding IMGPIC, Converter={StaticResource ByteToImage}}"/>
+            
             <controls:StandardEntry
             Placeholder="  Enter the book name"
             x:Name="BookNameEntry"
@@ -54,43 +56,37 @@
             controls:BorderThickness="4"
             controls:BorderColor="#02111b"
             />
-            <FlexLayout Wrap="Wrap" JustifyContent="SpaceEvenly" AlignItems="Center">
 
-                <Image x:Name="bookPictureImage" HeightRequest="150" WidthRequest="100" BackgroundColor="Gray" Source="{Binding imgcon, Converter={StaticResource ByteArrayToImageSourceConverter}}"/>
 
-                <buttons:SfButton
-                HeightRequest="50"
-                Text="Select an Image"
-                buttons:BackgroundColor="Gray"
-                buttons:CornerRadius="20"
-                buttons:ShowIcon="True"
-                TextColor="#ECEAEC"
-                FontFamily="LBR"
-                Padding="10"
+            <FlexLayout JustifyContent="SpaceAround" AlignItems="Center" Wrap="Wrap">
                 
-                >
-                    <buttons:SfButton.ImageSource>
-                        <svg:SvgImageSource Source="uploadsolid.svg" Color="#ECEAEC" Height="18" Width="18"/>
-                    </buttons:SfButton.ImageSource>
+            <buttons:SfButton
+            CornerRadius="20"
+            Text="Cancel"
+            buttons:ShowIcon="True"
+            HorizontalOptions="Center"
+            Clicked="CancelClicked"
+            BackgroundColor="#02111b"
+            TextColor="#ECEAEC"
+            Padding="15"
+            FontFamily="LBR"
+>
+                <buttons:SfButton.ImageSource>
+                    <svg:SvgImageSource Source="xmark-solid.svg" Color="#ECEAEC" Height="18" Width="18"/>
+                </buttons:SfButton.ImageSource>
 
-
-                </buttons:SfButton>
-
-            </FlexLayout>
-
+            </buttons:SfButton>
 
             <buttons:SfButton
             CornerRadius="20"
             Text="Update"
             buttons:ShowIcon="True"
             HorizontalOptions="Center"
-            
+            Clicked="UpdateClicked"
             
             BackgroundColor="#ff9f1c"
             TextColor="#02111b"
-            BorderColor="#02111b"
-            BorderWidth="3"
-            Padding="10"
+            Padding="15"
             FontFamily="LBR"
 >
                 <buttons:SfButton.ImageSource>
@@ -99,6 +95,7 @@
 
             </buttons:SfButton>
 
+            </FlexLayout>
 
         </StackLayout>
     </ContentPage.Content>

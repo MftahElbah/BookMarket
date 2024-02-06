@@ -3,6 +3,9 @@ using System.Globalization;
 using System.IO;
 using Xamarin.Forms;
 
+namespace BookMarket.Controls
+{
+
 public class ByteToImageSourceConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -18,4 +21,6 @@ public class ByteToImageSourceConverter : IValueConverter
     {
         throw new NotImplementedException();
     }
+}
+
 }

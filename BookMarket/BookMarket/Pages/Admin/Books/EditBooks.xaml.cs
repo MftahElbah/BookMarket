@@ -54,11 +54,6 @@ namespace BookMarket.Pages.Admin
             SfButton button = (SfButton)sender;
             Books book = (Books)button.BindingContext;
 
-            App.Current.Properties["BID"] = book.BookId;
-            App.Current.Properties["BN"] = book.BookName;
-            App.Current.Properties["AN"] = book.AuthorName;
-            App.Current.Properties["P"] = book.Price;
-            App.Current.Properties["Img"] = book.BookPic;
             await Navigation.PushAsync(new UpdateBookPage(book.BookId, book.BookName, book.AuthorName, book.Price, book.BookPic));
         }
         public void DeleteClicked(object sender, EventArgs e)

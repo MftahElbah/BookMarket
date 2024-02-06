@@ -18,6 +18,7 @@
     <None Remove="Resources\svg\arrow-right-solid.svg" />
     <None Remove="Resources\svg\delete.svg" />
     <None Remove="Resources\svg\edit.svg" />
+    <None Remove="Resources\svg\info.svg" />
     <None Remove="Resources\svg\key-solid.svg" />
     <None Remove="Resources\svg\plus-solid.svg" />
     <None Remove="Resources\svg\right-to-bracket-solid.svg" />
@@ -29,6 +30,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\svg\delete.svg" />
+    <EmbeddedResource Include="Resources\svg\info.svg" />
     <EmbeddedResource Include="Resources\svg\plus-solid.svg" />
   </ItemGroup>
 
@@ -68,13 +70,22 @@
     <EmbeddedResource Update="Pages\Admin\AdminFlayout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Admin\AddBooks.xaml">
+    <EmbeddedResource Update="Pages\Admin\Books\AddBooks.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Admin\EditBooks.xaml">
+    <EmbeddedResource Update="Pages\Admin\Books\EditBooks.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Admin\UpdateBookPage.xaml">
+    <EmbeddedResource Update="Pages\Admin\Books\UpdateBookPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Admin\FlyoutMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Admin\listCus.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Admin\UserInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Login-Signup\Login.xaml">

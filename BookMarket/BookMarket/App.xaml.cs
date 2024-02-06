@@ -16,7 +16,7 @@ namespace BookMarket
 
             SvgImageSource.RegisterAssembly();
 
-            MainPage = new Pages.Admin.AddBooks();
+            MainPage = new Pages.Admin.AdminFlayout ();
         }
 
         protected override void OnStart()

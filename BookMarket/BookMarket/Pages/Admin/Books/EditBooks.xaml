@@ -6,13 +6,15 @@
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
              >
+
+
+
     <ContentPage.Content>
-
-
         <ListView x:Name="lvt"
                   ItemsSource="{Binding Books}"
                   HasUnevenRows="True"
                   >
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
