@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BookMarket.Pages.Admin.UpdateBookPage"
-             xmlns:lol="clr-namespace:BookMarket."
+             xmlns:lol="clr-namespace:BookMarket"
              BackgroundColor="#ECEAEC"
              xmlns:controls="clr-namespace:BookMarket.Controls;assembly=BookMarket"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
