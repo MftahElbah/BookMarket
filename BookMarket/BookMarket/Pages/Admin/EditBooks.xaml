@@ -8,6 +8,7 @@
              >
     <ContentPage.Content>
 
+
         <ListView x:Name="lvt"
                   ItemsSource="{Binding Books}"
                   HasUnevenRows="True"
@@ -19,7 +20,7 @@
                         <Frame BackgroundColor="#b9b7b9" CornerRadius="20" Margin="10,20" Padding="10,20">
 
                             <FlexLayout JustifyContent="SpaceAround" AlignItems="Center" Wrap="Wrap" >
-                                <Image Source="{Binding BookPic}" x:Name="bookPictureImage" HeightRequest="100" WidthRequest="67" BackgroundColor="Gray"/>
+                                <Image Source="{Binding BookPic, Converter={StaticResource ByteToImageConverter}}" x:Name="bookPictureImage" HeightRequest="100" WidthRequest="67" BackgroundColor="Gray"/>
 
                                 <StackLayout>
                                     <Label HorizontalTextAlignment="Center" Text="{Binding BookName}" x:Name="BookNameLbl" FontFamily="LBB"/>
@@ -37,6 +38,7 @@
                                     Text="Edit"
                                         FontFamily="LBI"
                                         TextColor="#ECEAEC"
+                                        Clicked="EditClicked"
                                     >
                                         <buttons:SfButton.ImageSource>
                                             <svg:SvgImageSource Source="edit.svg" Color="#ECEAEC" Height="18" Width="18"/>
@@ -50,18 +52,22 @@
                                     HorizontalOptions="Center"
                                     BackgroundColor="Red"
                                     Padding="10"
-                                        Text="Delete"
-                                        FontFamily="LBI"
-                                        TextColor="#ECEAEC"
-                                        Clicked="DeleteClicked"
-                                        
-                                        
+                                    Text="Delete"
+                                    FontFamily="LBI"
+                                    TextColor="#ECEAEC"
+                                    Clicked="DeleteClicked"
                                     >
                                         <buttons:SfButton.ImageSource>
                                             <svg:SvgImageSource Source="delete.svg" Color="#ECEAEC" Height="18" Width="18"/>
                                         </buttons:SfButton.ImageSource>
 
                                     </buttons:SfButton>
+
+
+
+
+
+
                                 </StackLayout>
 
                             </FlexLayout>
