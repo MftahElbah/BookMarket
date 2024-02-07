@@ -24,6 +24,7 @@ namespace BookMarket.Pages.Admin
         
         public UpdateBookPage(int id,string bname,string aname,float p , byte[] pic)
         {
+
             InitializeComponent();
 
             ids = id;

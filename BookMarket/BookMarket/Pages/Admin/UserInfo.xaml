@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BookMarket.Pages.Admin.People.UserInfo"
+             x:Class="BookMarket.Pages.Admin.UserInfo"
              BackgroundColor="#ECEAEC"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
              >
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding un , StringFormat='Username: '}"></Label>
-            <Label Text="{Binding fn,StringFormat='Fullname: '}"></Label>
-            <Label Text="{Binding em,StringFormat='Email: '}"></Label>
-            <Label Text="" x:Name="gen"></Label>
-            <Label Text="{Binding a,StringFormat='Age:'}"></Label>
-            <Label Text="" x:Name="type"></Label>
-            <FlexLayout>
-                <buttons:SfButton Text="Make the account as an Admin"/>
-                <buttons:SfButton Text="Delete the Account"/>
-            </FlexLayout>
+            <Label  x:Name="UNlbl" FontFamily="LBR"/>
+            <Label  x:Name="FNlbl" FontFamily="LBR"/>
+            <Label  x:Name="Elbl" FontFamily="LBR"/>
+            <Label  x:Name="gen" FontFamily="LBR"/>
+            <Label  x:Name="Agelbl" FontFamily="LBR"/>
+            <Label Text="" x:Name="type" FontFamily="LBR"/>
+
+            <buttons:SfButton Text="{Binding text}" x:Name="MakeAdmin" Clicked="MAClicked" FontFamily="LBR"/>
+            <buttons:SfButton Text="Delete the Account" FontFamily="LBR" Clicked="DAClicked"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

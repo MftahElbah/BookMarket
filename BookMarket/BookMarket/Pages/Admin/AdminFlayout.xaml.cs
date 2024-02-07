@@ -14,7 +14,19 @@ namespace BookMarket.Pages.Admin
 	{
 		public AdminFlayout ()
 		{
-			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
+            InitializeComponent ();
+			flyout.fl.ItemSelected += OnSelectedItem;
 		}
-	}
+		private void OnSelectedItem(object sender, SelectedItemChangedEventArgs e) { 
+		var item = e.SelectedItem as FlyoutItems;
+			if (item != null)
+			{
+				Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetPage));
+				flyout.fl.SelectedItem = null;
+				IsPresented = false;
+			}
+		}
+
+    }
 }

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BookMarket.Pages.Admin.AddBooks"
              BackgroundColor="#ECEAEC"
+             Title="Add new Book"
              xmlns:controls="clr-namespace:BookMarket.Controls;assembly=BookMarket"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
@@ -82,10 +83,9 @@
                 
                 BackgroundColor="#ff9f1c"
                 TextColor="#02111b"
-                BorderColor="#02111b"
-                BorderWidth="3"
+
                 Padding="10"
-                FontFamily="LBR"
+                FontFamily="LBB"
     >
                 <buttons:SfButton.ImageSource>
                     <svg:SvgImageSource Source="plus-solid.svg" Color="#02111b" Height="18" Width="18"/>
@@ -93,9 +93,6 @@
                 
             </buttons:SfButton>
 
-            <Button Text="Check the List"
-                    Clicked="ctlClicked"
-                    />
 
             <Frame Grid.ColumnSpan="2" Grid.Row="4" BackgroundColor="Red" Opacity="0" Margin="50,0" CornerRadius="20" Padding="0,10" x:Name="ErrFrm">
                 <Label Text="" HorizontalTextAlignment="Center" TextColor="white"  x:Name="Errlbl" FontFamily="LBI"/>

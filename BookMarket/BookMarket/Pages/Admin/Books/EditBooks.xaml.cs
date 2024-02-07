@@ -39,6 +39,7 @@ namespace BookMarket.Pages.Admin
         }
         public EditBooks()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
 
             Resources.Add("ByteToImageConverter", new ByteToImageSourceConverter());
@@ -56,8 +57,13 @@ namespace BookMarket.Pages.Admin
 
             await Navigation.PushAsync(new UpdateBookPage(book.BookId, book.BookName, book.AuthorName, book.Price, book.BookPic));
         }
-        public void DeleteClicked(object sender, EventArgs e)
+        public async void DeleteClicked(object sender, EventArgs e)
         {
+            
+            bool result = await DisplayAlert("Confirmation", "Are you sure want to delete this book ?", "Yes", "Cancel");
+            if (result)
+            {
+
             SfButton button = (SfButton)sender;
             Books book = (Books)button.BindingContext;
 
@@ -68,6 +74,8 @@ namespace BookMarket.Pages.Admin
             selectedBook = null;
             lvt.ItemsSource = null;
             lvt.ItemsSource = books;
+            }
+            
         }
 
     }

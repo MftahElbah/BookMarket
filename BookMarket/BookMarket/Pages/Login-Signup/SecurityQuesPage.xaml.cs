@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookMarket.Pages.Admin;
 using BookMarket.Tables;
 using SQLite;
 using Xamarin.Forms;
@@ -41,7 +42,7 @@ namespace BookMarket.Pages
 		{
 			if (!string.IsNullOrEmpty(answerEntry.Text))
 			{
-                ansbtn.IsCheckable = true;
+                ansbtn.IsEnabled = true;
 
             }
 		}
@@ -56,7 +57,15 @@ namespace BookMarket.Pages
 
             if (user.QuesAns == answerEntry.Text ) {
 
+				if (user.UserType)
+				{
+                    App.Current.MainPage = new NavigationPage(new AdminFlayout());
+                }
+				else
+				{
                     App.Current.MainPage = new NavigationPage(new StorePage());
+
+				}
                
 			}
 			else

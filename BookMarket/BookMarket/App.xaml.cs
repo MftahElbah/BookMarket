@@ -16,7 +16,7 @@ namespace BookMarket
 
             SvgImageSource.RegisterAssembly();
 
-            MainPage = new Pages.Admin.AdminFlayout ();
+            MainPage = new Pages.Login_Signup.Login ();
         }
 
         protected override void OnStart()
@@ -30,6 +30,7 @@ namespace BookMarket
 
             var item = new UsersTable()
             {
+                UserId = 1,
                 UserName = "admin",
                 Fullname = "admin one",
                 Emails = "admin@gmail.com",

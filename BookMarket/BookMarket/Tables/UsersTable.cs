@@ -9,6 +9,8 @@ namespace BookMarket.Tables
 {
     public class UsersTable
     {
+        [PrimaryKey, AutoIncrement]
+        public int UserId { get; set; }
         [Unique] 
         public string UserName { get; set; }
         public string Fullname { get; set; }

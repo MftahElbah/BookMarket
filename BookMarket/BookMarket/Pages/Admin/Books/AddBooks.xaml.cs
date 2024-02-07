@@ -20,6 +20,7 @@ namespace BookMarket.Pages.Admin
             private byte[] _bookImageBytes;
         public AddBooks()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
 
@@ -84,10 +85,6 @@ namespace BookMarket.Pages.Admin
             }
         }
 
-        public void ctlClicked (object sender, EventArgs e)
-        {
-            App.Current.MainPage = new NavigationPage(new EditBooks());
-        }
 
     }
 }

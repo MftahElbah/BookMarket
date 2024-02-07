@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BookMarket.Pages.Admin.EditBooks"
+             Title="Edit Book"
              BackgroundColor="#ECEAEC"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BookMarket.Pages.Admin.People
+namespace BookMarket.Pages.Admin
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class listCus : ContentPage
@@ -27,24 +27,55 @@ namespace BookMarket.Pages.Admin.People
             {
                 Users.Clear();
             }
-            var data = dbs.Table<UsersTable>();
+            var data = dbs.Table<UsersTable>().Where(x => x.Active.Equals(true));
             Users = new ObservableCollection<UsersTable>(data);
             lvt.ItemsSource = Users;
 
         }
         public listCus ()
 		{
-			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
+            InitializeComponent ();
             var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UsersDB.db");
             dbs = new SQLiteConnection(dbPath);
             dbs.CreateTable<UsersTable>();
             refeshes();
+            typePicker.SelectedIndex = 0;
+        }
+
+        private void SelectedChanged(object sender, EventArgs e)
+        {
+            if(typePicker.SelectedIndex == 0)
+            {
+                refeshes();
+            }
+            else
+                if(typePicker.SelectedIndex == 1)
+            {
+                if (Users != null)
+                {
+                    Users.Clear();
+                }
+                var data = dbs.Table<UsersTable>().Where(x => x.UserType.Equals(true) && x.Active.Equals(true));
+                Users = new ObservableCollection<UsersTable>(data);
+                lvt.ItemsSource = Users;
+            }
+            else
+            {
+                if (Users != null)
+                {
+                    Users.Clear();
+                }
+                var data = dbs.Table<UsersTable>().Where(x => x.UserType.Equals(false) && x.Active.Equals(true));
+                Users = new ObservableCollection<UsersTable>(data);
+                lvt.ItemsSource = Users;
+            }
         }
 
         async void UserSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var user=e.SelectedItem as UsersTable;
-            await Navigation.PushAsync(new UserInfo(user.UserName , user.Fullname , user.Emails , user.GenderId , user.Age, user.UserType));
+            await Navigation.PushAsync(new UserInfo(user.UserId,user.UserName , user.Fullname , user.Emails , user.GenderId , user.Age, user.UserType,user.Pass,user.QuesID,user.QuesAns,user.secQues));
         }
 	}
 }
