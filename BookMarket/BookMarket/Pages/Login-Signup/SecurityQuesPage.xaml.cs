@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookMarket.Pages.Admin;
+using BookMarket.Pages.Main;
 using BookMarket.Tables;
 using SQLite;
 using Xamarin.Forms;
@@ -15,9 +16,13 @@ namespace BookMarket.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SecurityQuesPage : ContentPage
 	{
+
 		public SecurityQuesPage ()
 		{
-			InitializeComponent ();
+
+
+
+            InitializeComponent ();
 			var un = App.Current.Properties["LoginUsername"];
 
             var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UsersDB.db");
@@ -36,7 +41,9 @@ namespace BookMarket.Pages
 			{
 				quesLbl.Text = "First car name ?";
             }
-		}
+
+            
+        }
 
 		private void answerEntryChange(object sender, TextChangedEventArgs e)
 		{
@@ -63,7 +70,7 @@ namespace BookMarket.Pages
                 }
 				else
 				{
-                    App.Current.MainPage = new NavigationPage(new StorePage());
+                    App.Current.MainPage = new NavigationPage(new MainPage());
 
 				}
                

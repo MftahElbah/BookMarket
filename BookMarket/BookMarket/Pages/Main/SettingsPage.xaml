@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookMarket.Pages.Main.SettingsPage"
+             xmlns:local="clr-namespace:BookMarket.Pages.Main"
+             xmlns:lol="clr-namespace:BookMarket.Pages.Login_Signup"
+             xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
+             BackgroundColor="#ECEAEC"
+              
+             >
+    <ContentPage.Content >
+        <StackLayout>
+            <ListView x:Name="SettingsList" x:FieldModifier="public" ItemTapped="ListView_ItemTapped" >
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type local:SettingsMenu}">
+                        <local:SettingsMenu Name="Profile Settings" Icon="gears-solid.svg" TargetPage="{x:Type local:EPIPage}"/>
+                        <local:SettingsMenu Name="Logout" Icon="right-to-bracket-solid.svg" TargetPage="{x:Type lol:Login}"/>
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0">
+                                    <Image.Source>
+                                        <svg:SvgImageSource Source="{Binding Icon}" Color="#02111b"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding Name}" Grid.Column="1" TextColor="#02111b"/>
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

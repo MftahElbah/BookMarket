@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using BookMarket.Tables;
 using System.IO;
 using BookMarket.Pages.Admin;
+using BookMarket.Pages.Main;
 
 namespace BookMarket.Pages.Login_Signup
 {
@@ -43,10 +44,13 @@ namespace BookMarket.Pages.Login_Signup
                             if(user.Pass == passwordEntry.Text)
                             {
 
+
+                                App.Current.Properties["USID"] = user.UserId;
                                 if (user.secQues)
                                 {
                                     App.Current.Properties["LoginUsername"] = UsernameEntry.Text;
                                     App.Current.MainPage = new NavigationPage(new SecurityQuesPage());
+
                                 }
                                 else
                                 {
@@ -57,7 +61,7 @@ namespace BookMarket.Pages.Login_Signup
                                     }
                                     else
                                     {
-                                        App.Current.MainPage = new NavigationPage(new StorePage());
+                                        App.Current.MainPage = new NavigationPage(new MainPage());
                                     }
                                 }
                             }

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookMarket.Pages.Main.StorePage"
+                          BackgroundColor="#ECEAEC"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
+             >
+    <ContentPage.Content>
+
+        <ListView x:Name="lvt"
+           ItemsSource="{Binding Books}"
+           HasUnevenRows="True"
+           >
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+        
+            <Frame BackgroundColor="#dfdcdf" Margin="20"  CornerRadius="20">
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+
+                <Image Source="{Binding BookPic, Converter={StaticResource ByteToImageConverter}}" BackgroundColor="Gray" HeightRequest="300" WidthRequest="200" />
+                    <Label Text="{Binding BookName}" FontSize="Large" HorizontalTextAlignment="Center" FontFamily="LBB"/>
+                    <Label Text="{Binding AuthorName}" FontSize="Medium" HorizontalTextAlignment="Center" FontFamily="LBI"/>
+                    <Label Text="{Binding Price, StringFormat='Price: {0:C}'} " FontSize="Subtitle" HorizontalTextAlignment="Center" FontFamily="LBR"/>
+                                <buttons:SfButton
+                                    CornerRadius="20"
+                                    buttons:ShowIcon="True"
+                                    HorizontalOptions="Center"
+                                    BackgroundColor="#ff9f1c"
+                                    Padding="10"
+                                    Text="Buy"
+                                        FontFamily="LBI"
+                                        TextColor="#02111b"
+                                        Clicked="buyCLicked"
+                                    >
+                                    <buttons:SfButton.ImageSource>
+                                        <svg:SvgImageSource Source="CART.svg" Color="#02111b" Height="18" Width="18"/>
+                                    </buttons:SfButton.ImageSource>
+
+                                </buttons:SfButton>
+
+                            </StackLayout>
+
+
+        
+            </Frame>
+            
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
