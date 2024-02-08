@@ -5,6 +5,7 @@
                           BackgroundColor="#ECEAEC"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
+
              >
     <ContentPage.Content>
 

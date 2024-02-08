@@ -20,21 +20,16 @@ namespace BookMarket.Pages.Main
         public MainPage()
         {
             InitializeComponent();
-            
-            var storepage = new StorePage
-            {
-                Title ="Store",
-                IconImageSource= SvgImageSource.FromResource("shop-solid")
-                
-            };
-            var settings = new SettingsPage
-            {
-                Title = "Settings",
-                IconImageSource = SvgImageSource.FromResource("gear-solid")
+            NavigationPage navigationPage1 = new NavigationPage(new StorePage());
+            navigationPage1.IconImageSource = "shopsolid.png";
+            navigationPage1.Title = "Store";
+            NavigationPage navigationPage2 = new NavigationPage(new SettingsPage());
+            navigationPage2.IconImageSource = "gearsolid.png";
+            navigationPage2.Title = "Store";
 
-            };
-            Children.Add(storepage);
-            Children.Add(settings);
+            Children.Add(navigationPage1);
+            Children.Add(navigationPage2);
+
         }
     }
 }

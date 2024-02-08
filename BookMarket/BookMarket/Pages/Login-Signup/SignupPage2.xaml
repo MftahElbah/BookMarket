@@ -2,7 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BookMarket.Pages.Login_Signup.SignupPage2"
-             BackgroundColor="#ECEAEC">
+             BackgroundColor="#ECEAEC"
+             xmlns:controls="clr-namespace:BookMarket.Controls;assembly=BookMarket"
+xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
+             >
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
 
@@ -20,31 +24,49 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Entry
-                x:Name="EmailEntry"    
+                <controls:StandardEntry
+                controls:CornerRadius="20"
+                controls:BorderThickness="4"
+                controls:BorderColor="#02111b"
+                TextColor="#02111b"
                 Placeholder="Email" 
                 Grid.ColumnSpan="2"
                 Grid.Row="0"
-                
+                x:Name="EmailEntry"    
                 Keyboard="Email"
+                FontFamily="LBR"
                 />
-
-                <Entry
+                <controls:StandardEntry
+                controls:CornerRadius="20"
+                controls:BorderThickness="4"
+                controls:BorderColor="#02111b"
+                TextColor="#02111b"
+                FontFamily="LBR"
                 x:Name="PassEntry"
                 Placeholder="Password"
                 Grid.ColumnSpan="2"
                 Grid.Row="1"
                 IsPassword="True"
                 MaxLength="20"
-                />
 
-                <Entry
+                />
+                <controls:StandardEntry
+                controls:CornerRadius="20"
+                controls:BorderThickness="4"
+                controls:BorderColor="#02111b"
+                TextColor="#02111b"
+                FontFamily="LBR"
                 x:Name="ConPassEntry"
                 Placeholder="Configer Password"
                 Grid.ColumnSpan="2"
                 Grid.Row="2"
                 IsPassword="True"
+            
+
                 />
+                
+
+
 
                 <Button 
                 CornerRadius="20"

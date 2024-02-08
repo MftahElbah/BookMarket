@@ -140,10 +140,31 @@
     <EmbeddedResource Include="Resources\drawable\CART.svg" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\gear-solid.png" />
+    <AndroidResource Include="Resources\drawable\gearsolid.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\shop-solid.png" />
+    <AndroidResource Include="Resources\drawable\shopsolid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logosmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\lightofbooks.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\lightofbooks_adaptive_fore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\lightofbooks_adaptive_fore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\lightofbooks_adaptive_fore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\lightofbooks_adaptive_fore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\lightofbooks_adaptive_fore.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

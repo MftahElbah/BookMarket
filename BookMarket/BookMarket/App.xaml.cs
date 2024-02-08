@@ -16,7 +16,7 @@ namespace BookMarket
 
             SvgImageSource.RegisterAssembly();
 
-            MainPage = new Pages.Main.MainPage();
+            MainPage = new Pages.logopage();
         }
 
         protected override void OnStart()

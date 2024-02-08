@@ -6,7 +6,6 @@
              xmlns:lol="clr-namespace:BookMarket.Pages.Login_Signup"
              xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
              BackgroundColor="#ECEAEC"
-              
              >
     <ContentPage.Content >
         <StackLayout>
