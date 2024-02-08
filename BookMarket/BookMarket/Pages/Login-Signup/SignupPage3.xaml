@@ -32,6 +32,7 @@ xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
                     Placeholder="Age"
                     x:Name="AgeEntry"
                     Keyboard="Numeric"
+                    PlaceholderColor="Gray"
                     
                     />
 
@@ -100,6 +101,7 @@ xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
                     Grid.ColumnSpan="2"
                     FlowDirection="RightToLeft"
                     x:Name="AsrEntry"
+                    PlaceholderColor="Gray"
                     />
 
 

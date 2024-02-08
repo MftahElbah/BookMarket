@@ -40,6 +40,7 @@
                     Keyboard="Text"
                     MaxLength="10"
                     FontFamily="LBR"
+                    PlaceholderColor="Gray"
                     />
                 <controls:StandardEntry
                     controls:CornerRadius="20"
@@ -54,6 +55,7 @@
                     MaxLength="10"
                     TextChanged="FNChange"
                     FontFamily="LBR"
+                    PlaceholderColor="Gray"
                     
                     />
                 <controls:StandardEntry
@@ -69,6 +71,7 @@
                     MaxLength="10"
                     TextChanged="LNChange"
                     FontFamily="LBR"
+                    PlaceholderColor="Gray"
                     />
 
                 <FlexLayout Grid.ColumnSpan="2" Grid.Row="3" JustifyContent="SpaceEvenly">

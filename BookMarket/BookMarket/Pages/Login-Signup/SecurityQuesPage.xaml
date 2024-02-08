@@ -23,6 +23,7 @@
                 HeightRequest="50"
                 HorizontalOptions="Center"
                 TextChanged="answerEntryChange"
+                PlaceholderColor="Gray"
                 />
 
             <buttons:SfButton
